@@ -5,8 +5,7 @@ stage('Checkout') {
      checkout scm
 }
 stage('Run Python Spark') {
-sh "./opt/spark/bin/spark-submit $WORKSPACE/wordcount.py"
-
+sh "cd /opt/spark;.bin/spark-submit $WORKSPACE/wordcount.py"
 }
 stage('result') {
 sh  " cat $WORKSPACE/output/* "
