@@ -4,6 +4,7 @@ node ('spark') {
 stage('Checkout') {
      checkout scm
      sh "cp input.txt /tmp/"
+     sh "rm -rf /tmp/output"
 }
 stage('Run Python Spark') {
 sh "cd /opt/spark;./bin/spark-submit $WORKSPACE/wordcount.py"
