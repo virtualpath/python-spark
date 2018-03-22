@@ -9,9 +9,9 @@ if __name__ == "__main__":
   sc = SparkContext(conf=conf)
  
   # read in text file and split each document into words
-  words = sc.textFile("/tmp/input.txt").flatMap(lambda line: line.split(" "))
+  words = sc.textFile("./input.txt").flatMap(lambda line: line.split(" "))
  
   # count the occurrence of each word
   wordCounts = words.map(lambda word: (word, 1)).reduceByKey(lambda a,b:a +b)
  
-  wordCounts.saveAsTextFile("/tmp/output/")
+  wordCounts.saveAsTextFile("./output/")
