@@ -3,12 +3,13 @@ node ('spark') {
 
 stage('Checkout') {
      checkout scm
+     sh "cp input.txt /tmp/"
 }
 stage('Run Python Spark') {
 sh "cd /opt/spark;.bin/spark-submit $WORKSPACE/wordcount.py"
 }
 stage('result') {
-sh  " cat $WORKSPACE/output/* "
+sh  " cat tmp/output/* "
 
 }
 
