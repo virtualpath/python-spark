@@ -8,7 +8,7 @@ stage('Run Python Spark') {
 sh "./opt/spark/bin/spark-submit $WORKSPACE/wordcount.py"
 
 }
-stage('result") {
+stage('result') {
 sh  cat $WORKSPACE/output/*"
 
 }
