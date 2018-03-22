@@ -9,7 +9,7 @@ sh "./opt/spark/bin/spark-submit $WORKSPACE/wordcount.py"
 
 }
 stage('result') {
-sh  cat $WORKSPACE/output/*"
+sh  " cat $WORKSPACE/output/* "
 
 }
 
