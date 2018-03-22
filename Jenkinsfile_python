@@ -10,7 +10,7 @@ stage('Run Python Spark') {
 sh "cd /opt/spark;./bin/spark-submit $WORKSPACE/wordcount.py"
 }
 stage('result') {
-sh  " cat tmp/output/* "
+sh  " cat /tmp/output/* "
 
 }
 
