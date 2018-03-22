@@ -6,7 +6,7 @@ stage('Checkout') {
      sh "cp input.txt /tmp/"
 }
 stage('Run Python Spark') {
-sh "cd /opt/spark;.bin/spark-submit $WORKSPACE/wordcount.py"
+sh "cd /opt/spark;./bin/spark-submit $WORKSPACE/wordcount.py"
 }
 stage('result') {
 sh  " cat tmp/output/* "
