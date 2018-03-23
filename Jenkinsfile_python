@@ -2,7 +2,7 @@
 node ('spark') {
      deleteDir()
 try {
-stage('Checkout') {
+stage('Checkout Code') {
      checkout scm
      sh "cp input.txt /tmp/"
      sh "rm -rf /tmp/output"
